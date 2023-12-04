@@ -1,3 +1,4 @@
+# It only creates the ec2-instance but not connect to it because the vpc and security group is not specified, i.e in the inbound rules ssh and http port is not enabled
 AWSTemplateFormatVersion: "2010-09-09"
 Description: Provisioning an ec2-instance via cloudFormation Template
 
