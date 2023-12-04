@@ -9,4 +9,12 @@ Resources:
       ImageId: ami-04708942c263d8190
       InstanceType: t2.micro
 
+
+# Also using AWS CLI to create a stack we use this following command
+# aws cloudformation create-stack --stack-name ec2-stack --template-body file://C:\Users\sohai\OneDrive\Desktop\Templates\template.yaml 
+
+# And to update the existing stack we use this following command
+# aws cloudformation update-stack --stack-name ec2-stack --template-body file://C:\Users\sohai\OneDrive\Desktop\Templates\template.yaml 
+
+
       
