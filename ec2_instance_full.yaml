@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: "2010-09-09" 
+Description: Creating an ec2 instance and Allowing HTTP/HTTPS and SSH inbound and outbound traffic
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: ami-04708942c263d8190
+      InstanceType: t2.micro
+      KeyName: sam_kp
+      SecurityGroupIds:
+        - !Ref MyInstanceSecurityGroup
+
+  MyInstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: vpc-0a39ef5fc86e6640b
+      GroupName: !Join ["-",[myinstance-security-group, dev]]
+      GroupDescription: "Allowing HTTP/HTTPS and SSH inbound and outbound traffic"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
