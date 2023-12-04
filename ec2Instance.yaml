@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Provisioning an ec2-instance via cloudFormation Template
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-04708942c263d8190
+      InstanceType: t2.micro
+
+      
