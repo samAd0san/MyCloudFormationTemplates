@@ -1,0 +1,6 @@
+Resources:
+  MyBucket: 
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Retain
+    Properties: 
+      BucketName: samad0san-s3bucket # The name of the bucket should not be in upper case
